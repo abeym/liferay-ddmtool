@@ -26,19 +26,10 @@ Command Line Tool for authoring, uploading, downloading and synchronizing Lifera
 
 ## Installation
 
-Requires [Node.js](http://nodejs.org/) (if unsure if you have node install, run `node -v` in a console.)
-
-Install with npm:
-
-```
-sudo npm install -g liferay-ddmtool
-```
-
-and then run:
-
-```
-ddm
-```
+1. Make sure [Node.js](http://nodejs.org/) is installed by running `node -v` in your command line. If not, [install Node](http://nodejs.org/).
+2. Clone this repository to a directory of your choice.
+3. cd into that directory and run `npm install` to install dependencies.
+4. run `node index.js` to run this App.
 
 If this is the first time you use this App. You most probably want to download all structures and templates to a local folder.
 
@@ -132,7 +123,6 @@ For each project, there's a project configuration in `$USERHOME/.ddmtool/config/
   "filesPath": "/code/ddm-repo",
   "defaultLocale": "en_US",
   "externalDiff": "/usr/bin/opendiff %1 %2",
-  "allowSelfSignedCerts": true,
   "watchIgnorePattern": "^(\\#.*|.*\\~)$",
   "hosts": [
     {
@@ -162,7 +152,6 @@ For each project, there's a project configuration in `$USERHOME/.ddmtool/config/
 * `projectName`. Your project name. App may be called with command line argument `--project myproject` to skip the project selection menu.
 * `filesPath`. Full path to where your DDMs are. This is typically the folder you want to have under version control.
 * `defaultLocale`. New DDMs will be uploaded with the name/description in this locale.
-* `allowSelfSignedCerts`. By default, Node.js (and this tool) does not allow connections to hosts with self signed certificates. Set this to `true` to bypass this check and allow the connection. Added in version 0.8.6.
 * `watchIgnorePattern`. Some editors create temporary files. To make sure that the watch function doesn't try to upload those to the server you may specify a regex of files to ignore. Default settings ignore files starting with `#` and/or ending with `~`. Added in version 0.8.5. You need to add the `watchIgnorePattern` line to any previous projects you have, if you want to add the functionality.
 
 ##### Host(s)
